@@ -1,45 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head >
     <meta charset="UTF-8">
-    <title>Mi primera página</title>
+    <title>Fundamentos de HTML</title>
 
     <!-- Icono de la pestaña -->
     <link rel="icon" href="img/icono.png" type="image/png">
+    <!-- Hoja de estilos CSS -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <header id="landing">
+        <h1>Fundamentos de HTML</h1>
+        <p>HTML es el lenguaje de marcado utilizado para crear páginas web. Es la base de cualquier sitio web y se utiliza para estructurar el contenido, como texto, imágenes, enlaces y otros elementos multimedia.</p>
+        <nav>
+            <ul>
+                <li><a href="#automoviles">Automoviles</a></li>
+                <li><a href="#hipervinculos">Hipervinculos</a></li>
+                <li><a href="#info">Informacion de html</a></li>
+                <li><a href="#login">Login</a></li>
 
-    <h1>Bienvenido a mi página</h1>
 
-    <h2>Estas son mis imágenes:</h2>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="automoviles">
+            <h2>Automoviles</h2>
 
-    <!-- Primera imagen -->
-    <img src="img/badbunny.jpeg" alt="Foto de bad bunny" width="100">
+            <p>Los automoviles son vehiculos motorizados con ruedas. esta compuesto de diversas partes como:</p>
+           <ul>
+                    <strong>
+                        <li>
+                             <pre><code>Motor</code></pre>
+                        </li> 
+                        <li>
+                             <pre><code>suspencion</code></pre>
+                        </li> 
+                        <li>
+                             <pre><code>llantas</code></pre>
+                        </li>     
+                    </strong>
+                    <p>En este caso, <strong><code>&lt;h1&gt;</code></strong> es la etiqueta de apertura, "Título principal" es el contenido y <code>&lt;/h1&gt;</code> es la etiqueta de cierre.</p>
+            </ul>
+            <div class="tip">
+                Los automoviles pueden ser de combustion interna, electricos o hibridos.
+               
+            </div>
+            <hr>
+        </section>
+        <section id="hipervinculos">
+            <article>
+                <h2>Contenido en HTML</h2>
+                <p>El contenido en HTML puede ser texto, imágenes, enlaces, listas, tablas y otros elementos multimedia. Es importante estructurar el contenido de manera clara y organizada para mejorar la legibilidad y la experiencia del usuario.</p>
+                <h3>Enlaces</h3>  
+            </article>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Esto es un enlace a paginas externas</a>
+            <br>
+            <a href="#login">Esto es un enlace un id interno</a>
+            <br>
+            <a href="otro.html">Este es un enlace a otro html que esta en la misma carpeta</a>
+            <br>
+            <a href="newPage.html#refExterna">Este es un enlace a una seccion identificada en otro html de la misma carpeta</a>
 
-    <br><br>
+            <h3>Imagen accesible</h3>
+            <img src="./img/AMLOMVP.jpg" alt="Imagen de una leyenda en su maximo esplendor" width="200">
 
-    <!-- Segunda imagen -->
-    <img src="https://img.chilango.com/cdn-cgi/image/width=1200,quality=75,format=auto,onerror=redirect/2025/11/Bad-Bunny-ilustracion.jpg" alt="Imagen 2" width="300">
-
-    <br><br>
-
-    <!-- Gif -->
-    <img src="img/homero.webp" alt="Gif de Homero chino" width="200">
+        </section>
     
-    <br><br>
-    
-    <!-- Video -->
-    <video width="320" height="240" controls>
-        <source src="img/video.mp4" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video.
-    </video> 
+        <section id="info">
+            <h2>Contenedores: div vs span</h2>
+            <p><code>&lt;div&gt;</code> es un contenedor de bloque que se utiliza para agrupar elementos y aplicar estilos o scripts a un bloque completo, es decir, ocupa todo el ancho disponible. Por ejemplo:</p>
+            <div class="example_div"><pre><code>&lt;div class="caja"&gt;</code></pre></div>
+            <p><code>&lt;span&gt;</code> es un contenedor en línea que se utiliza para agrupar elementos de texto y aplicar estilos o scripts a un fragmento específico, es decir, no ocupa todo el ancho disponible solamente lo que ocupe el elemento . Por ejemplo:</p>
+            <span style="color:rgb(243, 109, 255);font-weight:bold;"><pre><code>&lt;span class="resaltado"&gt;Texto resaltado&lt;/span&gt;</code></pre></span>
+            <br>     
+            <h3>Listas</h3>
+            <h3>Listas ennumerada <code>&lt;ol&gt;</code></h3>
+            <ol>
+                <li>Primer elemento </li>
+                <li>Segundo elemento </li>
+                <li>Tercer elemento </li>
+            </ol>
+            <h3>Listas de simbolos <code>&lt;ul&gt;</code></h3>
+            <ul>
+                <li>Primer elemento </li>
+                <li>Segundo elemento </li>
+                <li>tercer Elemento </li>
+            </ul>
+        </section>
 
-    <br><br>
-
-    <!-- Botón que lleva a Google -->
-    <a href="https://www.google.com">
-        <button>Google</button>
-    </a>
-
+        <section id="login">
+            <h2>Login</h2>
+            <p>Este es un formulario de html con la estructura de un login:</p>
+            <form>
+                <label for="nombre">name:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <br><br>
+                <label for="email">email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+                <label for="birthdate">birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate">
+                <br><br>
+                <label>
+                <input type="checkbox" required>
+                Acepto términos
+                </label>
+                <br><br>
+                <button>Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Whatsapp Co.</p>
+        <br>
+        <a href="#landing">volver al inicio</a>
+    </footer>
 </body>
-</html>
+</html> 
